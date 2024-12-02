@@ -10,14 +10,16 @@ import pytest
 PUZZLE_DIR = pathlib.Path(__file__).parent
 
 
-@pytest.fixture
-def example1():
+@pytest.fixture(name="example1")
+def fixture_example1():
+    """Fixture for example1 data"""
     puzzle_input = (PUZZLE_DIR / "example1.txt").read_text().rstrip()
     return aoc{{year}}{{'%02d'|format(day)}}.parse_data(puzzle_input)
 
 
-@pytest.fixture
-def example2():
+@pytest.fixture(name="example2")
+def fixture_example2():
+    """Fixture for example2 data"""
     puzzle_input = (PUZZLE_DIR / "example2.txt").read_text().rstrip()
     return aoc{{year}}{{'%02d'|format(day)}}.parse_data(puzzle_input)
 
